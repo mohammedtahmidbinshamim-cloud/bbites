@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1.5,
             ease: "power3.out"
         }, "-=1.2")
-        .from("nav", {
+        .from("nav ul", {
             y: -50,
             opacity: 0,
             duration: 1,
