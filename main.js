@@ -52,6 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(".hero", {
             color: "#FFFFFF",
             ease: "power2.inOut"
+        }, 0)
+        .to(".primary-btn, .secondary-btn", {
+            backgroundColor: "#FFFFFF",
+            color: "#142D1D", // var(--color-primary)
+            borderColor: "#FFFFFF",
+            ease: "power2.inOut"
         }, 0);
 
     // Section Animations
@@ -72,17 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Product Hover Interaction (optional JS enhancement to CSS)
-    const products = document.querySelectorAll(".product-card");
-
-    products.forEach(product => {
-        product.addEventListener("mouseenter", () => {
-            gsap.to(product.querySelector("img"), { scale: 1.05, duration: 0.5 });
-        });
-        product.addEventListener("mouseleave", () => {
-            gsap.to(product.querySelector("img"), { scale: 1, duration: 0.5 });
-        });
-    });
+    // Mobile Menu Toggle
 
     // Mobile Menu Toggle
     const menuBtn = document.querySelector(".mobile-menu-btn");

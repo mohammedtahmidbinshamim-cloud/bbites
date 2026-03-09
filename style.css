@@ -188,6 +188,20 @@ nav a {
   color: var(--color-white);
 }
 
+.nav-cta-btn {
+  background-color: var(--color-secondary);
+  color: var(--color-primary) !important;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--color-secondary);
+  transition: all 0.3s ease;
+}
+
+.nav-cta-btn:hover {
+  background-color: transparent;
+  color: var(--color-secondary) !important;
+  box-shadow: 0 4px 10px rgba(197, 160, 89, 0.2);
+}
+
 
 
 /* Hero Section */
@@ -264,14 +278,54 @@ nav a {
 }
 
 .hero-content p {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--color-secondary);
-  opacity: 1;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  color: inherit;
+  opacity: 0.9;
   letter-spacing: 0.02em;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.primary-btn,
+.secondary-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(20, 45, 29, 0.2);
 }
 
 
@@ -310,6 +364,32 @@ section {
   justify-content: center;
 }
 
+.philosophy-text span {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.advantage-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.advantage-list li {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
 .philosophy-image {
   height: 100%;
   width: 100%;
@@ -322,103 +402,378 @@ section {
   object-fit: cover;
 }
 
-/* Products */
-.products {
+/* Hallmarks of Excellence */
+.hallmarks-section {
   background-color: var(--color-primary);
   color: var(--color-white);
-}
-
-.products h2 {
-  color: var(--color-secondary);
-}
-
-.products p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.product-card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.product-image {
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.05);
-}
-
-.product-info {
-  padding: 1.5rem 0;
-}
-
-.product-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-white);
-}
-
-.product-price {
-  font-family: var(--font-sans);
-  color: var(--color-secondary);
-}
-
-/* Lifestyle Pillars */
-.lifestyle-pillars {
-  background-color: #ECECE8;
   padding: var(--spacing-section) 0;
 }
 
-.lifestyle-pillars-header {
+.hallmarks-section span {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hallmarks-section h2 {
+  color: var(--color-white);
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.lifestyle-pillars-grid {
+.hallmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.hallmark-item {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+  cursor: default;
+}
+
+.hallmark-item:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-secondary);
+}
+
+.hallmark-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background-color: rgba(197, 160, 89, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  color: var(--color-secondary);
+}
+
+.hallmark-item h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.hallmark-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Ascension Plans */
+.ascension-plans {
+  background-color: #ECECE8;
+  padding: var(--spacing-section) 0;
+}
+
+.ascension-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ascension-header span {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ascension-header h2 {
+  color: var(--color-primary);
+}
+
+.ascension-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   text-align: center;
 }
 
-.lifestyle-pillar-item {
-  padding: 2rem;
-  border-top: 1px solid rgba(20, 45, 29, 0.1);
-  transition: transform 0.3s ease;
+.ascension-item {
+  padding: 2.5rem 2rem;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.lifestyle-pillar-item:hover {
-  transform: translateY(-4px);
+.ascension-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
-.pillar-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.ascension-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
-.lifestyle-pillar-item h3 {
-  font-size: 1.25rem;
+.ascension-item h3 {
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   color: var(--color-primary);
+}
+
+.ascension-item p {
+  color: var(--color-text);
+  margin: 0 auto;
+}
+
+.ascension-cta {
+  margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ascension-cta p {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+/* Sovereignty Section */
+.sovereignty-section {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-section) 0;
+  text-align: center;
+}
+
+.sovereignty-block {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Credo Section */
+.credo-section {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: var(--spacing-section) 0;
+  text-align: center;
+}
+
+.credo-block {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.sovereignty-block .content-label {
+  color: var(--color-secondary);
+}
+
+.credo-block .content-label {
+  color: var(--color-primary);
+}
+
+.sovereignty-block h2,
+.credo-block h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sovereignty-block p,
+.credo-block p {
+  font-size: 1.15rem;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+.credo-block h2 {
+  color: var(--color-primary);
+}
+
+.sovereignty-block h2 {
+  color: var(--color-white);
+}
+
+.sovereignty-list,
+.credo-list {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem auto;
+  max-width: 500px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.credo-list {
+  border-top: 1px solid rgba(20, 45, 29, 0.2);
+}
+
+.sovereignty-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.sovereignty-list li span:last-child {
+  color: var(--color-secondary);
+}
+
+.credo-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(20, 45, 29, 0.2);
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: var(--color-primary);
+}
+
+.closing-statement {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: var(--color-secondary) !important;
+}
+
+/* Pantheon of Proof Section */
+.proof-section {
+  background-color: var(--color-bg);
+  padding: 8rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(20, 45, 29, 0.1);
+}
+
+.proof-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.proof-content .content-label {
+  color: var(--color-secondary);
+}
+
+.proof-content h2 {
+  color: var(--color-primary);
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.proof-cta {
+  margin-top: 3rem;
+}
+
+.accent-btn {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accent-btn:hover {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(197, 160, 89, 0.2);
+}
+
+/* Delivery Section */
+.delivery-section {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 8rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.delivery-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.delivery-content .content-label {
+  color: var(--color-secondary);
+}
+
+.delivery-content h2 {
+  color: var(--color-white);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.delivery-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Summons Section */
+.summons-section {
+  background-color: var(--color-bg);
+  padding: 8rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(20, 45, 29, 0.1);
+}
+
+.summons-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.summons-content .content-label {
+  color: var(--color-secondary);
+}
+
+.summons-content h2 {
+  color: var(--color-primary);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.summons-content p {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  opacity: 0.85;
+}
+
+.summons-cta {
+  margin-top: 3rem;
 }
 
 /* Footer */
@@ -478,6 +833,58 @@ footer {
   opacity: 0.5;
   text-align: center;
   padding-top: 1rem;
+}
+
+.developer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  color: var(--color-white);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.developer-link svg {
+  font-size: 1.15em;
+  transition: transform 0.3s ease;
+}
+
+.developer-link:hover {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-secondary);
+}
+
+.developer-link:hover svg {
+  transform: translateY(-2px);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(37, 211, 102, 0.4);
+  color: #FFF;
 }
 
 /* Mobile Menu Button */
@@ -562,8 +969,8 @@ footer {
 
   /* Adjust section grids for mobile */
   .philosophy-grid,
-  .lifestyle-pillars-grid,
-  .product-grid {
+  .ascension-grid,
+  .hallmarks-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
     height: auto;
@@ -575,19 +982,22 @@ footer {
     width: 100%;
   }
 
-  .lifestyle>div {
-    display: flex !important;
-    flex-direction: column;
-    height: auto !important;
-  }
-
-  .lifestyle>div>div:first-child {
-    height: 300px;
-    width: 100%;
+  .proof-section,
+  .delivery-section,
+  .summons-section {
+    padding: 6rem 1.5rem;
   }
 
   .footer-contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
   }
 }
